@@ -15,7 +15,10 @@ class App extends Component {
   componentDidMount() {
     fetch('https:/jsonplaceholder.typicode.com/users')
       .then((response) => response.json())
-      .then((users) => this.setState({ monsters: users }));
+      .then((users) => this.setState({ monsters: users }))
+      .catch((error) => {
+        console.error('Error:', error);
+      });
   }
   handleChange = (e) => {
     this.setState({ searchField: e.target.value });
