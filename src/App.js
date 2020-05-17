@@ -13,12 +13,14 @@ class App extends Component {
     // this.handleChange = this.handleChange.bind(this);
   }
   componentDidMount() {
+    console.log('go fetching');
     fetch('https:/jsonplaceholder.typicode.com/users')
       .then((response) => response.json())
       .then((users) => this.setState({ monsters: users }))
       .catch((error) => {
         console.error('Error:', error);
       });
+    console.log('done fetching');
   }
   handleChange = (e) => {
     this.setState({ searchField: e.target.value });
