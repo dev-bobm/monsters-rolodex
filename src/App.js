@@ -14,7 +14,7 @@ class App extends Component {
   }
   componentDidMount() {
     console.log('go fetching');
-    fetch('https:/jsonplaceholder.typicode.com/users')
+    fetch('https://jsonplaceholder.typicode.com/users')
       .then((response) => response.json())
       .then((users) => this.setState({ monsters: users }))
       .catch((error) => {
